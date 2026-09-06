@@ -47,7 +47,6 @@ final class SwiftDataProductRepository: ProductRepository {
     }
     
     func deleteProduct(_ product: Product) throws {
-        
         let productID = product.id
         
         let descriptor = FetchDescriptor<CurrentProductEntity>(
