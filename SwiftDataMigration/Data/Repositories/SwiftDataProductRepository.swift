@@ -18,12 +18,9 @@ final class SwiftDataProductRepository: ProductRepository {
     }
     
     func fetchProducts() throws -> [Product] {
+        let descriptor = FetchDescriptor<CurrentProductEntity>()
         
-        let descriptor =
-        FetchDescriptor<CurrentProductEntity>()
-        
-        let entities =
-        try context.fetch(descriptor)
+        let entities = try context.fetch(descriptor)
         
         return entities.map {
             Product(
@@ -37,8 +34,7 @@ final class SwiftDataProductRepository: ProductRepository {
     
     func addProduct(_ product: Product) throws {
         
-        let entity =
-        CurrentProductEntity(
+        let entity = CurrentProductEntity(
             id: product.id,
             name: product.name,
             price: product.price,

@@ -13,7 +13,7 @@ enum ModelContainerFactory {
         do {
             let schema = Schema(versionedSchema: ProductSchemaV3.self)
             
-            let configuration = ModelConfiguration("ProductDatabase")
+            let configuration = ModelConfiguration("ProductDatabase", isStoredInMemoryOnly: false)
             
 //            let container = try ModelContainer(
 //                for: schema,
